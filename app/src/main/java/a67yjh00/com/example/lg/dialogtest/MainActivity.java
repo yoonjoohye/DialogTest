@@ -22,14 +22,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         AlertDialog.Builder dialog=new AlertDialog.Builder(this);
         dialog.setTitle("첫번째 다이얼로그");
-        dialog.setIcon(R.mipmap.love);
-        //dialog.setMessage("여기는 메시지를 쓰는 곳입니다.");
+        dialog.setIcon(R.mipmap.pikachu);
+        /*dialog.setMessage("여기는 메시지를 쓰는 곳입니다.");
         dialog.setItems(itemArr, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {
                 butDialog.setText(itemArr[i]);
             }
-        });
+        });*/
+       dialog.setSingleChoiceItems(itemArr, 0, new DialogInterface.OnClickListener() {
+           @Override
+           public void onClick(DialogInterface dialog, int i) {
+               butDialog.setText(itemArr[i]);
+           }
+       });
         dialog.setPositiveButton("OK",null);
         dialog.show();
     }
